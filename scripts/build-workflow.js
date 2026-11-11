@@ -62,7 +62,7 @@ function build(o) {
       parameters: {
         ...headerAuth,
         method: 'GET',
-        url: '=https://api.unipile.com/v2/{{ $json.account_id }}/users/me/relation-requests?type=received',
+        url: '=https://api.unipile.com/v2/{{ $json.account_id }}/users/me/relation-requests?type=received&limit=50',
         options: { timeout: 15000 },
       },
     },

@@ -83,7 +83,7 @@ test/run-nodes.js        runs the node code against fake inputs
 - The webhook is protected only by a long random path. Unipile signs its requests (`unipile-signature`) and checking that signature would be better.
 - The 5 second debounce is stateless. If Unipile loses the webhook for the last message of a burst, that burst gets no reply, and there is no polling fallback for messages.
 - Context is the last 15 messages of the chat, nothing longer term.
-- Only the first page (20) of pending invitations is read on each tick.
+- Only the first 50 pending invitations are read on each tick. `limit` must be set explicitly: without it the Unipile endpoint returned an empty list even with a request pending.
 - Automating a LinkedIn account goes against LinkedIn's terms and can get it restricted. Use an account you can afford to lose.
 
 No credentials or message data are stored in this repository.
